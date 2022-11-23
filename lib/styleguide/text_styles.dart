@@ -52,6 +52,6 @@ final TextStyle buttonStyle = TextStyle(
 );
 final TextStyle forumNameTextStyle = TextStyle(
   color: Colors.white,
-  fontSize: 22.0,
+  fontSize: 12.0,
   fontWeight: FontWeight.w800,
 );

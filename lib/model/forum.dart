@@ -5,29 +5,19 @@ class Forum {
   final String imagePath;
   final String rank;
   final List<Topic> topics;
-  final String threads;
-  final String subs;
+  final String plays;
 
-  Forum({this.title, this.imagePath, this.rank, this.threads, this.subs, this.topics});
+  Forum({this.title, this.imagePath, this.rank,this.plays, this.topics});
 }
 
-final fortniteForum = Forum(
-    title: "Fortnite",
-    imagePath: "assets/images/fortnite.jpg",
+final strongLockForum = Forum(
+    title: "Strong Passwords",
+    imagePath: "assets/stonglock.png",
     rank: "31",
-    threads: "88",
-    subs: "500+",
+    plays: "88",
     topics: fortniteTopics);
 
-final pubgForum = Forum(
-    title: "PUBG",
-    imagePath: "assets/images/pubg.png",
-    rank: "25",
-    threads: "120",
-    subs: "1000+",
-    topics: pubgTopics);
 
 final forums = [
-  fortniteForum,
-  pubgForum
+  strongLockForum
 ];

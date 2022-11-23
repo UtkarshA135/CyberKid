@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import 'package:flutter_flare/age.dart';
+import 'package:flutter_flare/customise.dart';
+import 'package:flutter_flare/styleguide/colors.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key key}) : super(key: key);
@@ -16,11 +17,30 @@ class _DashboardState extends State<Dashboard> {
     
     return Scaffold (
       body: Container(
-          child : Image.asset('assets/dashboard.gif',      
-       fit: BoxFit.fill,
+          child : Stack(
+    alignment: Alignment.centerRight,
+    children: <Widget>[
+      Image(
+        image: new AssetImage('assets/dashboard.gif'),
+        fit: BoxFit.fill,
        height: double.infinity,
       width: double.infinity,
-      alignment: Alignment.center,)
+      alignment: Alignment.center,
+      ),
+      Padding(
+          padding: EdgeInsets.all(8.0),
+          child: ElevatedButton(
+             child: new Text("Lets start !!"),
+             style: ButtonStyle(
+              fixedSize: MaterialStateProperty.all(Size.fromHeight(50)),
+              backgroundColor: MaterialStateProperty.all(Colors.blue[300])),
+              onPressed: () =>  Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Customise())),
+              
+          )
+      ),
+    ]
+)
    
       )
     );

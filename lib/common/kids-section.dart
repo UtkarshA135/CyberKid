@@ -3,12 +3,12 @@ import 'package:flutter_flare/common/forum_card.dart';
 import 'package:flutter_flare/common/tab_text.dart';
 import 'package:flutter_flare/model/forum.dart';
 
-class HorizontalTabLayout extends StatefulWidget {
+class KidSection extends StatefulWidget {
   @override
-  _HorizontalTabLayoutState createState() => _HorizontalTabLayoutState();
+  _KidSectionState createState() => _KidSectionState();
 }
 
-class _HorizontalTabLayoutState extends State<HorizontalTabLayout>
+class _KidSectionState extends State<KidSection>
     with SingleTickerProviderStateMixin {
   int selectedTabIndex = 2;
   AnimationController _controller;

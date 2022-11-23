@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_flare/age.dart';
 import 'package:fluttermoji/fluttermoji.dart';
 
 
@@ -8,11 +9,11 @@ class Customise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fluttermoji Demo',
+      title: 'Customise your avatar',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
+      theme: ThemeData.dark(),
       // darkTheme: ThemeData.dark(),
-      home: MyHomePage(title: 'Fluttermoji'),
+      home: MyHomePage(title: 'Customise your avatar'),
     );
   }
 }
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              "Use your Fluttermoji anywhere\nwith the below widget",
+              "Create you superhero ",
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
               textAlign: TextAlign.center,
             ),
@@ -60,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              "and create your own page to customize them using our widgets",
+              "How about a hat with a moustache or maybe a cinderlla dress looks dope",
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
               textAlign: TextAlign.center,
             ),
@@ -142,6 +143,12 @@ class NewPage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(backgroundColor: Colors.black,
+      onPressed: () => 
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Age()))
+      
+      )
     );
   }
 }

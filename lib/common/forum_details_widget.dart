@@ -56,17 +56,12 @@ class ForumDetailsWidget extends StatelessWidget {
                   valueStyle: valueTextStyle,
                 ),
                 LabelValueWidget(
-                  value: forum.threads,
-                  label: "threads",
+                  value: forum.plays,
+                  label: "Plays",
                   labelStyle: labelTextStyle,
                   valueStyle: valueTextStyle,
                 ),
-                LabelValueWidget(
-                  value: forum.subs,
-                  label: "subs",
-                  labelStyle: labelTextStyle,
-                  valueStyle: valueTextStyle,
-                ),
+             
               ],
             )
           ],
