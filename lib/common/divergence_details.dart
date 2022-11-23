@@ -1,18 +1,22 @@
+// ignore_for_file: empty_constructor_bodies
+
 import 'package:flutter/material.dart';
-import 'package:flutter_flare/common/label_value_widget.dart';
-import 'package:flutter_flare/common/storyMode.dart';
-import 'package:flutter_flare/common/watchVideo.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_flare/common/three-men-morris.dart';
 import 'package:flutter_flare/model/forum.dart';
-import 'package:flutter_flare/styleguide/text_styles.dart';
 
-class ForumDetailsWidget extends StatelessWidget {
+import '../styleguide/text_styles.dart';
 
+class DivergenceDetailsWidget extends StatelessWidget {
   final Forum forum;
 
-  ForumDetailsWidget({this.forum});
+const DivergenceDetailsWidget({ this.forum});
 
   @override
   Widget build(BuildContext context) {
+  
     return ClipPath(
       clipper: MyCustomClipper(),
       child: Container(
@@ -58,27 +62,15 @@ class ForumDetailsWidget extends StatelessWidget {
                
                     child: new Text("Play New game"),
                     style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromHeight(10)),
+                    fixedSize: MaterialStateProperty.all(Size.fromHeight(40)),
                     backgroundColor: MaterialStateProperty.all(Colors.blue[300])),
-                    onPressed: () =>  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => WatchVideo())),
+                    onPressed: () =>  {}
                 ),),
                 Flexible(
-                  child: new SizedBox(width: 10,)
+                child: new SizedBox(width: 10)
                 ),
-                Flexible(
-                  child:
-                ElevatedButton(
-                  
-                    child: new Text("Story Mode 🐱‍🏍"),
-                    style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromHeight(10)),
-                    backgroundColor: MaterialStateProperty.all(Colors.blue[300])),
-                    onPressed: () =>  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => StoryMode())),
-                  
-                ))
-             
+                
+               
               ],
             )
           ],

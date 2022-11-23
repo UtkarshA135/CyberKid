@@ -16,8 +16,16 @@ final strongLockForum = Forum(
     rank: "31",
     plays: "88",
     topics: fortniteTopics);
+final divergenceForum = Forum(
+    title: "Three-men-morris",
+    imagePath: "three-men-morris.png",
+    rank: "31",
+    plays: "88",
+    topics: fortniteTopics
+);
 
 
 final forums = [
-  strongLockForum
+  strongLockForum,
+  divergenceForum
 ];

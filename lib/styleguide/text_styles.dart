@@ -55,3 +55,4 @@ final TextStyle forumNameTextStyle = TextStyle(
   fontSize: 12.0,
   fontWeight: FontWeight.w800,
 );
+

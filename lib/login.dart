@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:translator/translator.dart';
+
 import 'package:flutter_flare/password_scenario.dart';
 class LoginScreen extends StatefulWidget {
   @override
@@ -12,10 +14,37 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
   String animationType = "idle";
+  String hintTextUsername = "Howdy Captain Africa!!, Give yourself a name";
+  String hintTextPassword = "Never forget to lock 🔐 your essentials";
   bool isHacked = false;
   final passwordController = TextEditingController();
   final passwordFocusNode = FocusNode();
+    GoogleTranslator translator = GoogleTranslator();
+  var output;
+  String dropdownValue;
 
+  static const Map<String, String> lang = {
+    "Hindi": "hi",
+    "English": "en",
+    "Urdu": "ur",
+  };
+
+  void trans() {
+    translator
+        .translate(hintTextUsername, to: "$dropdownValue")
+        .then((value) {
+      setState(() {
+        hintTextUsername = value as String;
+      });
+    });
+    translator
+        .translate(hintTextPassword, to: "$dropdownValue")
+        .then((value) {
+      setState(() {
+        hintTextPassword = value as String;
+      });
+    });
+  }
   String validatePassword(String value) {
     RegExp regex =
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
@@ -121,9 +150,41 @@ class _LoginScreenState extends State<LoginScreen> {
                 focusNode: passwordFocusNode,
                 style: TextStyle(fontSize: 13), 
               ),
-
+              Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("Select Language here =>"),
+                DropdownButton<String>(
+                  value: dropdownValue,
+                  icon: Icon(Icons.arrow_downward),
+                  iconSize: 24,
+                  elevation: 16,
+                  style: TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  onChanged: (String newValue) {
+                    setState(() {
+                      dropdownValue = newValue;
+                      trans();
+                    });
+                  },
+                  items: lang
+                      .map((string, value) {
+                        return MapEntry(
+                          string,
+                          DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(string),
+                          ),
+                        );
+                      })
+                      .values
+                      .toList(),
+                ),
             ],
-        ) ),
+        ) ])),
         ),
 
         //container for raised button
