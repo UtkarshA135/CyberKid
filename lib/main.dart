@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_flare/age.dart';
 import 'package:flutter_flare/common/divergence.dart';
 import 'package:flutter_flare/common/kids-section.dart';
+import 'package:flutter_flare/common/shop.dart';
 import 'package:flutter_flare/common/story-mode/page1.dart';
+import 'package:flutter_flare/dashboard.dart';
 import 'package:flutter_flare/hangman/hangman.dart';
 import 'package:flutter_flare/morabaraba.dart';
 import 'package:flutter_flare/onboarding.dart';
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Color.fromRGBO(38,50,56,1),
-        body: SpalshScreen()
+        body: Dashboard()
       )
     );
   }

@@ -76,20 +76,20 @@ class _KidSectionState extends State<KidSection>
       [
         ForumCard(forum: strongLockForum),
         ForumCard(forum: internetSecurityForm),
-        ForumCard(forum: strongLockForum),
-        ForumCard(forum: internetSecurityForm),
+        ForumCard(forum: thirdform),
+        ForumCard(forum: fouthform),
       ],
-     [
+      [
         ForumCard(forum: strongLockForum),
         ForumCard(forum: internetSecurityForm),
-        ForumCard(forum: strongLockForum),
-        ForumCard(forum: internetSecurityForm),
+        ForumCard(forum: thirdform),
+        ForumCard(forum: fouthform),
       ],
-     [
+        [
         ForumCard(forum: strongLockForum),
         ForumCard(forum: internetSecurityForm),
-        ForumCard(forum: strongLockForum),
-        ForumCard(forum: internetSecurityForm),
+        ForumCard(forum: thirdform),
+        ForumCard(forum: fouthform),
       ],
     ][index];
   }

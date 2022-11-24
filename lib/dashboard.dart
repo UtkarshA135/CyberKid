@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_flare/common/divergence.dart';
 import 'package:flutter_flare/age.dart';
+import 'package:flutter_flare/common/shop.dart';
 import 'package:flutter_flare/customise.dart';
 import 'package:flutter_flare/styleguide/colors.dart';
 
@@ -27,6 +28,9 @@ class _DashboardState extends State<Dashboard> {
       width: double.infinity,
       alignment: Alignment.center,
       ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
       Padding(
           padding: EdgeInsets.all(8.0),
           child: ElevatedButton(
@@ -39,10 +43,21 @@ class _DashboardState extends State<Dashboard> {
               
           )
       ),
-    ]
-)
-   
-      )
-    );
+       SizedBox(height: 10,),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: ElevatedButton(
+             child: new Text("Shop Now!!"),
+             style: ButtonStyle(
+              fixedSize: MaterialStateProperty.all(Size.fromHeight(50)),
+              backgroundColor: MaterialStateProperty.all(Colors.blue[300])),
+              onPressed: () =>  Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Shop())),
+              
+          )
+      ),
+    ])
+      ])));
+    
   }
 }

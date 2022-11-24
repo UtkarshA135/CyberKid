@@ -12,20 +12,35 @@ class Forum {
 
 final strongLockForum = Forum(
     title: "Strong Passwords\n Lets Play",
-    imagePath: "assets/stonglock.png",
+    imagePath: "assets/img1.png",
     rank: "31",
     plays: "88",
     topics: fortniteTopics);
 final internetSecurityForm = Forum(
     title: "Internet-Security \n Lets Play",
-    imagePath: "assets/internet-safty-image.jpeg",
+    imagePath: "assets/img2.png",
+    rank: "17",
+    plays: "88",
+    topics: fortniteTopics
+);
+final thirdform = Forum(
+    title: "Internet-Security \n Lets Play",
+    imagePath: "assets/img3.png",
     rank: "17",
     plays: "88",
     topics: fortniteTopics
 );
 
-
+final fouthform = Forum(
+    title: "Internet-Security \n Lets Play",
+    imagePath: "assets/img4.png",
+    rank: "17",
+    plays: "88",
+    topics: fortniteTopics
+);
 final forums = [
   strongLockForum,
-  internetSecurityForm
+  internetSecurityForm,
+  thirdform,
+  fouthform
 ];

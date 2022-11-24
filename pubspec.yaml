@@ -31,6 +31,7 @@ dependencies:
   audioplayers: 0.13.4
   chewie: 1.3.5
   webview_flutter: ^3.0.4
+  url_launcher:
   rflutter_alert:
   flutter_spinkit:
   date_format:
@@ -104,8 +105,16 @@ flutter:
    - assets/easy_password_scenario_final-012.png
    - assets/easy_password_scenario_final-013.png
    - assets/easy_password_scenario_final-014.png
-
-   
+   - assets/img1.png
+   - assets/img2.png
+   - assets/img3.png
+   - assets/img4.png
+   - assets/avatars-001.png
+   - assets/avatars-002.png
+   - assets/avatars-003.png
+   - assets/avatars-004.png
+   - assets/avatars-005.png
+   - assets/avatars-006.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
