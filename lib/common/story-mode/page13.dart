@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_flare/common/story-mode/page2.dart';
+import 'package:flutter_flare/common/story-mode/summary.dart';
 import 'package:flutter_flare/hangman/hangman.dart';
 
 class Page13 extends StatefulWidget {
@@ -49,7 +50,7 @@ class _Page13State extends State<Page13> {
         backgroundColor: Colors.black,
         onPressed: () {
            Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Hangman()));
+            context, MaterialPageRoute(builder: (context) => MyWidget()));
         },
       ),
     );

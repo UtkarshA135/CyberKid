@@ -15,7 +15,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
           ()=>Navigator.pushReplacement(context,
                                         MaterialPageRoute(builder:
                                                           (context) => 
-                                                          StoryMode()
+                                                          OnBoardingPage()
                                                          )
                                        )
          );

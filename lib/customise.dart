@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_flare/age.dart';
+import 'package:flutter_flare/common/divergence.dart';
 import 'package:fluttermoji/fluttermoji.dart';
 
 
@@ -90,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(
             height: 100,
           ),
+          Container(child :  TextButton (onPressed: () =>Navigator.push(context,new MaterialPageRoute(builder: (context) => Age())), child: Text("Skip -->")))
         ],
       ),
     );
@@ -147,7 +149,7 @@ class NewPage extends StatelessWidget {
       onPressed: () => 
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => Age()))
-      
+           
       )
     );
   }
