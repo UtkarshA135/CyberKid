@@ -31,7 +31,10 @@ dependencies:
   audioplayers: 0.13.4
   chewie: 1.3.5
   webview_flutter: ^3.0.4
-
+  rflutter_alert:
+  flutter_spinkit:
+  date_format:
+  material_design_icons_flutter:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -79,6 +82,29 @@ flutter:
    - assets/three-men-morris.png
    - assets/background-sound.mp3
    - assets/internet-safty-image.jpeg
+   - assets/password-security/medium_dos-001.png
+   - assets/password-security/medium_dos-002.png
+   - assets/password-security/medium_dos-003.png
+   - assets/password-security/medium_dos-004.png
+   - assets/password-security/medium_dos-005.png
+   - assets/password-security/medium_dos-006.png
+   - assets/password-security/medium_dos-007.png
+   - assets/1.png
+   - assets/easy_password_scenario_final-001.png
+   - assets/easy_password_scenario_final-002.png
+   - assets/easy_password_scenario_final-003.png
+   - assets/easy_password_scenario_final-004.png
+   - assets/easy_password_scenario_final-005.png
+   - assets/easy_password_scenario_final-006.png
+   - assets/easy_password_scenario_final-007.png
+   - assets/easy_password_scenario_final-008.png
+   - assets/easy_password_scenario_final-009.png
+   - assets/easy_password_scenario_final-010.png
+   - assets/easy_password_scenario_final-011.png
+   - assets/easy_password_scenario_final-012.png
+   - assets/easy_password_scenario_final-013.png
+   - assets/easy_password_scenario_final-014.png
+
    
 
 

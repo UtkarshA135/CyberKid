@@ -36,6 +36,7 @@ android {
         applicationId "com.example.flutter_flare"
         minSdkVersion 21
         targetSdkVersion 28
+        compileSdkVersion 21
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

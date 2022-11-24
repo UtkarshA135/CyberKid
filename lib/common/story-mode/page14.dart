@@ -1,33 +1,24 @@
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_flare/customise.dart';
-import 'package:flutter_flare/dashboard.dart';
-import 'package:flutter_flare/pages/landing_page.dart';
-class PassWordScenario extends StatefulWidget {
+import 'package:flutter_flare/common/story-mode/page2.dart';
+import 'package:flutter_flare/hangman/hangman.dart';
+
+class Page14 extends StatefulWidget {
   final bool isHacked;
-  const PassWordScenario({Key key, this.isHacked}) : super(key: key);
+  const Page14({Key key, this.isHacked}) : super(key: key);
 
   @override
-  State<PassWordScenario> createState() => _PassWordScenarioState();
+  State<Page14> createState() => _Page14State();
 }
 
-class _PassWordScenarioState extends State<PassWordScenario> {
-  String image="";
+class _Page14State extends State<Page14> {
+  String image='assets/easy_password_scenario_final-014.png';
   @override
   void initState() {
-   super.initState();
-
     // TODO: implement initState
-    if(widget.isHacked)
-    image = "assets/bad_password-002.png";
-    else{
-      image = "assets/bad_password-001.png";
-       Timer(Duration(seconds: 3), () { // <-- Delay here
-                    
-              image = "assets/bad_password-003.png";
-                  });
-    }
+    super.initState();
   }
 
   @override
@@ -58,7 +49,7 @@ class _PassWordScenarioState extends State<PassWordScenario> {
         backgroundColor: Colors.black,
         onPressed: () {
            Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Dashboard()));
+            context, MaterialPageRoute(builder: (context) => Hangman()));
         },
       ),
     );
