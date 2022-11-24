@@ -25,7 +25,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
     return Container(
       color: Colors.white,
       child:Center(
-        child: Image.asset('assets/1.png')
+        child: Image.asset('assets/one.png')
       )
     );
   }
