@@ -9,6 +9,8 @@ class LeaderBoardpage extends StatefulWidget {
 }
 
 class _LeaderBoardpageState extends State<LeaderBoardpage> {
+  List<String> names = ["Utkarsh", "Krish", "Sujit", "Ashish", "Jayant","Kusum", "Tatendo", "Fosia","Amada",
+  "Alcidio","Jayesh"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,7 +142,7 @@ class _LeaderBoardpageState extends State<LeaderBoardpage> {
                             SizedBox(
                               width: 3,
                             ),
-                            Text("Dhananjay Arne")
+                            Text(names[index])
                           ],
                         ),
                         leading: Text("#${index + 1}" ,style: TextStyle(fontWeight: FontWeight.bold),),

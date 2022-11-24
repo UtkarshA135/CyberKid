@@ -7,8 +7,8 @@ class HangmanWords {
   List<String> _words = [];
 
   Future readWords() async {
-    String fileText = await rootBundle.loadString('res/hangman_words.txt');
-    _words = fileText.split('\n');
+   //String fileText = await rootBundle.loadString('res/hangman_words.txt');
+    _words = ['password protection'];
   }
 
   void resetWords() {
