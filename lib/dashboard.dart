@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_flare/common/divergence.dart';
 import 'package:flutter_flare/age.dart';
 import 'package:flutter_flare/customise.dart';
 import 'package:flutter_flare/styleguide/colors.dart';

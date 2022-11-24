@@ -11,15 +11,15 @@ class Forum {
 }
 
 final strongLockForum = Forum(
-    title: "Strong Passwords",
+    title: "Strong Passwords\n Lets Play",
     imagePath: "assets/stonglock.png",
     rank: "31",
     plays: "88",
     topics: fortniteTopics);
-final divergenceForum = Forum(
-    title: "Three-men-morris",
-    imagePath: "three-men-morris.png",
-    rank: "31",
+final internetSecurityForm = Forum(
+    title: "Internet-Security \n Lets Play",
+    imagePath: "assets/internet-safty-image.jpeg",
+    rank: "17",
     plays: "88",
     topics: fortniteTopics
 );
@@ -27,5 +27,5 @@ final divergenceForum = Forum(
 
 final forums = [
   strongLockForum,
-  divergenceForum
+  internetSecurityForm
 ];

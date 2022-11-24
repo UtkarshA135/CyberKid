@@ -1,80 +1,80 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_flare/common/divergence_card.dart';
 import 'package:flutter_flare/common/forum_card.dart';
+import 'package:flutter_flare/common/storyMode.dart';
 import 'package:flutter_flare/common/tab_text.dart';
+import 'package:flutter_flare/common/three-men-morris.dart';
 import 'package:flutter_flare/model/forum.dart';
+import 'package:flutter_flare/pages/landing_page.dart';
+import 'package:flutter_flare/styleguide/curvepainter.dart';
 
 class Divergence extends StatefulWidget {
+  final String category;
+  const Divergence({Key key, this.category}) : super(key: key);
+
   @override
-  _DivergenceState createState() => _DivergenceState();
+  State<Divergence> createState() => _DivergenceState();
 }
 
-class _DivergenceState extends State<Divergence>
-    with SingleTickerProviderStateMixin {
-  int selectedTabIndex = 2;
-  AnimationController _controller;
-  Animation<Offset> _animation;
-  Animation<double> _fadeAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 1000));
-    _animation = Tween<Offset>(begin: Offset(0,0), end: Offset(-0.05,0)).animate(_controller);
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
-  }
-
-  playAnimation() {
-    _controller.reset();
-    _controller.forward();
-  }
+class _DivergenceState extends State<Divergence> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Container(
-      height: 1000.0,
-      alignment: Alignment.center,
-      child: Stack(
-        children: <Widget>[
-         
-          Padding(
-            padding: const EdgeInsets.only(left: 550.0),
-            child: FutureBuilder(
-              future: playAnimation(),
-              builder: (context, snapshot) {
-                return FadeTransition(
-                  opacity: _fadeAnimation,
-                  child: SlideTransition(
-                    position: _animation,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: getList(selectedTabIndex),
-                    ),
-                  ),
-                );
+      body:
+       Card(
+          
+            child: Column(mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                 child: CustomPaint(
+          painter: CurvePainter(),
+              child: Column(
+                children:[ 
+              Expanded(child: InkWell(
+  onTap: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LandingPage(category:widget.category))), // Image tapped
+  splashColor: Colors.white10, // Splash color over image
+  child: Ink.image(
+    fit: BoxFit.fill, // Fixes border issues
+    width: 600,
+    height: 600,
+    image : AssetImage(
+                "assets/age_range-001.png",
                 
-              },
+              ),
+   
+  ),
+),
+              
             ),
-          )
-        ],
-      ),
-    ));
-  }
+              Expanded(child:Text("Story Mode " , style: TextStyle(fontWeight: FontWeight.w600, fontSize:20))
+            )]))),
 
-  List<Widget> getList(index) {
-    return [
-      [
-        DivergenceCard(forum: divergenceForum),
-        DivergenceCard(forum: strongLockForum),
-      ]
-    ][0];
-  }
-
-  onTabTap(int index) {
-    setState(() {
-      selectedTabIndex = index;
-    });
-  }
+                Expanded(
+                  child: CustomPaint(
+          painter: CurvePainter(),
+              child: Column(
+                children:[ 
+                       Expanded(child: InkWell(
+  onTap: () =>Navigator.push(
+              context, MaterialPageRoute(builder: (context) => WebViewExample())), // Image tapped
+  splashColor: Colors.white10, // Splash color over image
+  child: Ink.image(
+    fit: BoxFit.fill, // Fixes border issues
+    width: 600,
+    height: 600,
+    image : AssetImage(
+                "assets/morabaraba.png",
+                
+              ),
+   
+  ),
+),),
+            Expanded(child:  Text("Play a New Game" , style: TextStyle(fontWeight: FontWeight.w600, fontSize:20)))
+              ])),
+            
+       )]),
+          ));
+}
 }

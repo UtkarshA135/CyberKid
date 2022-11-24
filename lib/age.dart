@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter_flare/common/divergence.dart';
 import 'package:flutter_flare/pages/landing_page.dart';
 
 
@@ -27,7 +28,7 @@ class _AgeState extends State<Age> {
                 children:[ 
               InkWell(
   onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => LandingPage(category:"kid"))), // Image tapped
+              context, MaterialPageRoute(builder: (context) => Divergence(category:"kid"))), // Image tapped
   splashColor: Colors.white10, // Splash color over image
   child: Ink.image(
     fit: BoxFit.cover, // Fixes border issues
@@ -49,7 +50,7 @@ class _AgeState extends State<Age> {
                 children:[ 
                         InkWell(
   onTap: () =>Navigator.push(
-              context, MaterialPageRoute(builder: (context) => LandingPage(category:"teen"))), // Image tapped
+              context, MaterialPageRoute(builder: (context) => Divergence(category:"teen"))), // Image tapped
   splashColor: Colors.white10, // Splash color over image
   child: Ink.image(
     fit: BoxFit.cover, // Fixes border issues

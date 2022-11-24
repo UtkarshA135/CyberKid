@@ -18,7 +18,7 @@ class ForumDetailsWidget extends StatelessWidget {
       child: Container(
         height: 180.0,
         padding: const EdgeInsets.only(
-            left: 20.0, right: 16.0, top: 24.0, bottom: 12.0),
+            left: 20.0, right: 16.0, top: 10.0, bottom: 12.0),
         color: Colors.white,
         child:  Column(
           children: <Widget>[
@@ -44,35 +44,35 @@ class ForumDetailsWidget extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: 40.0,
-            ),
+       
             Row(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Flexible(
                   
                   child:
                 ElevatedButton(
-               
-                    child: new Text("Play New game"),
+                    
+                    child: new Text("Watch Video 📸", style: TextStyle(fontSize: 10),),
                     style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromHeight(10)),
+                        minimumSize: MaterialStateProperty.all(Size(200, 50)),
+                        maximumSize: MaterialStateProperty.all(Size(200, 50)),
+ 
                     backgroundColor: MaterialStateProperty.all(Colors.blue[300])),
                     onPressed: () =>  Navigator.push(
                     context, MaterialPageRoute(builder: (context) => WatchVideo())),
                 ),),
-                Flexible(
-                  child: new SizedBox(width: 10,)
-                ),
+               Flexible(
+                  child: SizedBox(width:2)),
                 Flexible(
                   child:
                 ElevatedButton(
                   
-                    child: new Text("Story Mode 🐱‍🏍"),
+                  child: new Text("Enjoy Comic 📚", style: TextStyle(fontSize: 10),),
                     style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromHeight(10)),
+                        minimumSize: MaterialStateProperty.all(Size(200, 50)),
+                        maximumSize: MaterialStateProperty.all(Size(200, 50)),
                     backgroundColor: MaterialStateProperty.all(Colors.blue[300])),
                     onPressed: () =>  Navigator.push(
                     context, MaterialPageRoute(builder: (context) => StoryMode())),

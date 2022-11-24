@@ -25,14 +25,17 @@ dependencies:
   flutter_animated_dialog: ^2.0.1
   video_player: ^2.4.8
   sqflite: ^1.1.0
-  path_provider: ^0.5.0+1
-  path_provider_android: ^2.0.22
-  path_provider_ios:
   translator:
+  flutter_local_notifications: ^5.0.0+1
+  assets_audio_player: ^1.0.1
+  audioplayers: 0.13.4
+  chewie: 1.3.5
+  webview_flutter: ^3.0.4
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.5
 
 dev_dependencies:
   flutter_test:
@@ -74,7 +77,9 @@ flutter:
    - assets/stonglock.png
    - assets/DOS.mp4
    - assets/three-men-morris.png
-
+   - assets/background-sound.mp3
+   - assets/internet-safty-image.jpeg
+   
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -31,47 +31,25 @@ class _KidSectionState extends State<KidSection>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 500.0,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text("Select your comic arena!!!"),
+        centerTitle: true,
+      ),
+      body: Container(
+      color: Colors.black,
+       height: double.infinity,
+      width: double.infinity,
+      alignment: Alignment.center,
+
       child: Stack(
         children: <Widget>[
-          Positioned(
-            left: -20,
-            bottom: 0,
-            top: 0,
-            width: 110.0,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 80.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  TabText(
-                    text: "Media",
-                    isSelected: selectedTabIndex == 0,
-                    onTabTap: () {
-                      onTabTap(0);
-                    },
-                  ),
-                  TabText(
-                    text: "Streamers",
-                    isSelected: selectedTabIndex == 1,
-                    onTabTap: () {
-                      onTabTap(1);
-                    },
-                  ),
-                  TabText(
-                    text: "Forum",
-                    isSelected: selectedTabIndex == 2,
-                    onTabTap: () {
-                      onTabTap(2);
-                    },
-                  )
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 65.0),
+      
+         
+          Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.only(left:65.0),
             child: FutureBuilder(
               future: playAnimation(),
               builder: (context, snapshot) {
@@ -89,7 +67,7 @@ class _KidSectionState extends State<KidSection>
             ),
           )
         ],
-      ),
+      )),
     );
   }
 
@@ -97,24 +75,22 @@ class _KidSectionState extends State<KidSection>
     return [
       [
         ForumCard(forum: strongLockForum),
+        ForumCard(forum: internetSecurityForm),
         ForumCard(forum: strongLockForum),
-        ForumCard(forum: strongLockForum),
-        ForumCard(forum: strongLockForum),
+        ForumCard(forum: internetSecurityForm),
       ],
-      [
+     [
         ForumCard(forum: strongLockForum),
+        ForumCard(forum: internetSecurityForm),
         ForumCard(forum: strongLockForum),
-        ForumCard(forum: strongLockForum),
-        ForumCard(forum: strongLockForum)
+        ForumCard(forum: internetSecurityForm),
       ],
-      [
+     [
         ForumCard(forum: strongLockForum),
+        ForumCard(forum: internetSecurityForm),
         ForumCard(forum: strongLockForum),
-        ForumCard(forum: strongLockForum),
-        ForumCard(forum: strongLockForum),
-        ForumCard(forum: strongLockForum),
-        ForumCard(forum: strongLockForum),
-      ]
+        ForumCard(forum: internetSecurityForm),
+      ],
     ][index];
   }
 

@@ -13,6 +13,7 @@ class ForumCard extends StatelessWidget {
     return SizedBox(
       width: 280.0,
       child: Card(
+        color: Colors.grey[200],
         margin: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 60.0),
         elevation: 20.0,
         shape: RoundedRectangleBorder(
@@ -24,7 +25,7 @@ class ForumCard extends StatelessWidget {
             children: <Widget>[
               Image.asset(
                 forum.imagePath,
-                fit: BoxFit.fitWidth,
+               
               ),
               Positioned(
                 left: 0,
@@ -34,7 +35,7 @@ class ForumCard extends StatelessWidget {
               ),
               Positioned(
                 left: 0,
-                bottom: 80.0,
+                bottom: 200.0,
                 child: ForumNameWidget(forum: forum),
               ),
             ],

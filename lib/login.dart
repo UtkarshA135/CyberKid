@@ -16,6 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
   String animationType = "idle";
   String hintTextUsername = "Howdy Captain Africa!!, Give yourself a name";
   String hintTextPassword = "Never forget to lock 🔐 your essentials";
+  String selectlanguages = "Select Language here =>";
+  String submit = "Submit";
   bool isHacked = false;
   final passwordController = TextEditingController();
   final passwordFocusNode = FocusNode();
@@ -27,6 +29,10 @@ class _LoginScreenState extends State<LoginScreen> {
     "Hindi": "hi",
     "English": "en",
     "Urdu": "ur",
+    "French" : "fr",
+    "Arabic" : "ar",
+    "Portuguese" : "pt",
+    "Swahili" : "sw"
   };
 
   void trans() {
@@ -34,14 +40,28 @@ class _LoginScreenState extends State<LoginScreen> {
         .translate(hintTextUsername, to: "$dropdownValue")
         .then((value) {
       setState(() {
-        hintTextUsername = value as String;
+        hintTextUsername = value.toString();
       });
     });
     translator
         .translate(hintTextPassword, to: "$dropdownValue")
         .then((value) {
       setState(() {
-        hintTextPassword = value as String;
+        hintTextPassword = value.toString();
+      });
+    });
+       translator
+        .translate(selectlanguages, to: "$dropdownValue")
+        .then((value) {
+      setState(() {
+        selectlanguages = value.toString();
+      });
+    });
+       translator
+        .translate(submit, to: "$dropdownValue")
+        .then((value) {
+      setState(() {
+        submit = value.toString();
       });
     });
   }
@@ -136,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
 
               TextFormField(
-                decoration: InputDecoration(border: InputBorder.none, hintText: "Howdy Captain Africa!!, Give yourself a name", contentPadding: EdgeInsets.all(20), 
+                decoration: InputDecoration(border: InputBorder.none, hintText: hintTextUsername, contentPadding: EdgeInsets.all(20), 
                 ),
                 style: TextStyle(fontSize: 13), 
               ),
@@ -145,20 +165,24 @@ class _LoginScreenState extends State<LoginScreen> {
 
               TextFormField(
                 obscureText: true,
-                decoration: InputDecoration(border: InputBorder.none, hintText: "Never forget to lock 🔐 your essentials", contentPadding: EdgeInsets.all(20)),
+                decoration: InputDecoration(border: InputBorder.none, hintText: hintTextPassword, contentPadding: EdgeInsets.all(20)),
                 controller: passwordController,
                 focusNode: passwordFocusNode,
                 style: TextStyle(fontSize: 13), 
               ),
-              Row(
+          
+            ],
+        ) )),
+        Flexible(
+                child:Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text("Select Language here =>"),
+                Text(selectlanguages),
                 DropdownButton<String>(
                   value: dropdownValue,
                   icon: Icon(Icons.arrow_downward),
-                  iconSize: 24,
-                  elevation: 16,
+                  iconSize: 13,
+                  elevation: 5,
                   style: TextStyle(color: Colors.deepPurple),
                   underline: Container(
                     height: 2,
@@ -182,11 +206,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       })
                       .values
                       .toList(),
-                ),
-            ],
-        ) ])),
-        ),
-
+                )])),
+    
+    
         //container for raised button
        Flexible ( child: Container(
           width: 350,
@@ -194,7 +216,7 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: EdgeInsets.only(top: 20),
           child: ElevatedButton(
             
-              child: Text("Submit", style: TextStyle(color: Colors.white),),
+              child: Text(submit, style: TextStyle(color: Colors.white),),
 
               onPressed: () {
                 if(validatePassword(passwordController.text)==null){

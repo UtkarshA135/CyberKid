@@ -27,8 +27,8 @@ class ForumNameWidget extends StatelessWidget {
 }
 
 class CustomShapeBorder extends ShapeBorder {
-  final double distanceFromWall = 12;
-  final double controlPointDistanceFromWall = 2;
+  final double distanceFromWall = 45;
+  final double controlPointDistanceFromWall = 4;
 
   @override
   EdgeInsetsGeometry get dimensions => null;
@@ -40,7 +40,7 @@ class CustomShapeBorder extends ShapeBorder {
 
   @override
   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
-    return getClip(Size(130.0, 60.0));
+    return getClip(Size(150.0, 80.0));
   }
 
   @override

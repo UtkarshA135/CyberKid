@@ -1,8 +1,10 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_flare/login.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 class OnBoardingPage extends StatefulWidget {
   @override
   _OnBoardingPageState createState() => _OnBoardingPageState();
@@ -10,7 +12,18 @@ class OnBoardingPage extends StatefulWidget {
 
 class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
-
+    var audio = AudioPlayer();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    audio.play('http://119.226.104.170/Rsoft5140/66119514-20200506-183433-1588770273.71547.mp3');
+  }
+    @override
+  void dispose() {
+audio.stop();   
+ super.dispose();
+  }
   void _onIntroEnd(context) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => LoginScreen()),
