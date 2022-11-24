@@ -229,7 +229,29 @@ class _GameScreenState extends State<GameScreen> {
     super.initState();
     initWords();
   }
+  void _showDialog() {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("It is used to safeguard your essentials / accounts"),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            Row(children:[
+              TextButton(
+              child: new Text("OK thanks"),
+              onPressed: () {
+                  Navigator.of(context).pop();
+              },
+              )
 
+          ],
+            )]);
+      }
+    );
+   }
   @override
   Widget build(BuildContext context) {
     if (resetGame) {
@@ -313,6 +335,7 @@ class _GameScreenState extends State<GameScreen> {
                                 splashColor: Colors.transparent,
                                 onPressed: hintStatus
                                     ? () {
+                                      _showDialog();
                                         int rand = Random()
                                             .nextInt(hintLetters.length);
                                         wordPress(englishAlphabet.alphabet

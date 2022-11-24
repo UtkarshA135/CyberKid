@@ -8,7 +8,7 @@ class HangmanWords {
 
   Future readWords() async {
    //String fileText = await rootBundle.loadString('res/hangman_words.txt');
-    _words = ['password protection'];
+    _words = ['password'];
   }
 
   void resetWords() {
