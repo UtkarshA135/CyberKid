@@ -1,6 +1,6 @@
 # CyberTsoro
 
-A cybersecurity learning games for African Kids
+A cybersecurity learning game for African Kids (supported on web as well)
 
 ## Getting Started
 
